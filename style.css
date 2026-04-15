@@ -1,0 +1,155 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #52606d;
+  --border: #d9e2ec;
+  --accent: #2f80ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: min(92vw, 820px);
+  padding: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+h1,
+h2,
+p,
+li,
+label,
+button,
+input {
+  line-height: 1.45;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.instructions {
+  text-align: left;
+  margin: 18px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  max-width: 320px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+.trial-header {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.fixation {
+  font-size: clamp(48px, 8vw, 72px);
+  font-weight: 700;
+  text-align: center;
+  padding: 36px 12px;
+}
+
+.stimulus-area {
+  min-height: 260px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fafbfd;
+}
+
+.stimulus-area img,
+.stimulus-area video {
+  max-width: 100%;
+  max-height: 420px;
+  display: block;
+}
+
+.placeholder {
+  width: 100%;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--muted);
+  padding: 18px;
+}
+
+.response-area {
+  margin-top: 18px;
+  text-align: center;
+  user-select: none;
+}
+
+#prompt-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.response-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.1rem;
+}
+
+.status {
+  min-height: 1.3em;
+  margin-top: 10px;
+  color: #c62828;
+}
+
+.hidden {
+  display: none;
+}
