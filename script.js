@@ -263,7 +263,7 @@ function downloadCsv() {
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  const safeId = participantId.replace(/[^a-z0-9_-]/gi, "_").replace(/^[_-]+/, "_");
+  const safeId = participantId.replace(/[^a-z0-9_]/gi, "_").replace(/^_+/, "");
   a.href = url;
   a.download = `basketball_anticipation_${safeId || "participant"}.csv`;
   document.body.appendChild(a);
