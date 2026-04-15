@@ -15,7 +15,7 @@ A tiny browser-based behavioral experiment for studying how participants predict
 
 ## How to run
 
-1. Open `/home/runner/work/basketball-anticipation-lab/basketball-anticipation-lab/index.html` in a browser.
+1. Open `index.html` in a browser.
 2. Enter a participant ID.
 3. Click **Start Experiment**.
 4. Respond during each trial using:
@@ -41,7 +41,7 @@ The script records participant ID, trial metadata, key response, response label,
 
 ## How to add or edit trials
 
-Edit the `TRIALS` array in `/home/runner/work/basketball-anticipation-lab/basketball-anticipation-lab/script.js`.
+Edit the `TRIALS` array in `script.js`.
 
 Each trial object should include:
 
@@ -56,7 +56,7 @@ Three sample dummy trials are included by default.
 
 ## How to add local stimuli
 
-1. Put your files in `/home/runner/work/basketball-anticipation-lab/basketball-anticipation-lab/stimuli/`.
+1. Put your files in the `stimuli/` directory.
 2. Reference those files in each trial using paths like:
    - `stimuli/my_scene_01.jpg`
    - `stimuli/my_clip_02.mp4`
