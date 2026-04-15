@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Scene 2: Player near rim with defender</title>
+  <desc id="desc">Paint area with offensive player at rim and a defender contesting.</desc>
+  <rect width="800" height="450" fill="#e8b574"/>
+  <rect x="30" y="30" width="740" height="390" rx="18" fill="none" stroke="#ffffff" stroke-width="6"/>
+
+  <rect x="610" y="120" width="140" height="210" fill="#f0d3a6" stroke="#ffffff" stroke-width="4"/>
+  <line x1="610" y1="225" x2="750" y2="225" stroke="#ffffff" stroke-width="4"/>
+  <path d="M680 205h36v40h-36z" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <line x1="716" y1="225" x2="742" y2="225" stroke="#ff5722" stroke-width="6"/>
+
+  <circle cx="650" cy="235" r="24" fill="#2e7d32"/>
+  <text x="650" y="241" text-anchor="middle" font-family="Arial" font-size="13" fill="#fff">ATT</text>
+  <circle cx="690" cy="200" r="24" fill="#b71c1c"/>
+  <text x="690" y="206" text-anchor="middle" font-family="Arial" font-size="13" fill="#fff">DEF</text>
+  <circle cx="663" cy="215" r="8" fill="#ef6c00" stroke="#4e342e" stroke-width="2"/>
+  <path d="M656 215h14M663 208v14" stroke="#4e342e" stroke-width="1.5"/>
+
+  <line x1="650" y1="235" x2="712" y2="225" stroke="#29b6f6" stroke-width="5"/>
+  <polygon points="712,225 699,232 700,218" fill="#29b6f6"/>
+
+  <rect x="18" y="10" width="390" height="44" rx="8" fill="#1e1e1ecc"/>
+  <text x="32" y="39" font-family="Arial" font-size="20" fill="#ffffff">Scene 2: At rim, defender contesting</text>
+</svg>
