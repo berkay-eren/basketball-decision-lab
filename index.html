@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basketball Anticipation Experiment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <section class="card" id="welcome-screen">
+      <h1>Basketball Anticipation Lab</h1>
+      <p>
+        You will view short basketball scenes and predict the next action.
+      </p>
+
+      <div class="instructions">
+        <h2>Instructions</h2>
+        <ol>
+          <li>Watch each scene carefully.</li>
+          <li>When prompted, respond as quickly and accurately as possible.</li>
+          <li>Use keys: <strong>A</strong> = pass, <strong>S</strong> = shoot, <strong>D</strong> = drive.</li>
+        </ol>
+      </div>
+
+      <label for="participant-id">Participant ID</label>
+      <input id="participant-id" type="text" placeholder="e.g., P001" maxlength="40" />
+
+      <button id="start-button">Start Experiment</button>
+      <p class="status" id="start-status" aria-live="polite"></p>
+    </section>
+
+    <section class="card hidden" id="trial-screen" aria-live="polite">
+      <div class="trial-header">
+        <p id="trial-counter">Trial 0 / 0</p>
+      </div>
+
+      <div id="fixation" class="fixation hidden" aria-label="Fixation cross">+</div>
+
+      <div id="stimulus-area" class="stimulus-area hidden"></div>
+
+      <div id="response-area" class="response-area hidden">
+        <p id="prompt-text">What happens next?</p>
+        <p class="response-options" id="response-options">
+          <span><strong>A</strong> = pass</span>
+          <span><strong>S</strong> = shoot</span>
+          <span><strong>D</strong> = drive</span>
+        </p>
+        <p class="status" id="response-status"></p>
+      </div>
+    </section>
+
+    <section class="card hidden" id="end-screen">
+      <h2>Experiment Complete</h2>
+      <p>Thank you for participating.</p>
+      <p id="completion-summary"></p>
+      <button id="download-button">Download Results CSV</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
