@@ -31,8 +31,6 @@ const FIXATION_MS = 500;
 const IMAGE_MS = 1500;
 const ITI_MS = 500;
 
-const keyToLabel = { a: "pass", s: "shoot", d: "drive" };
-
 let participantId = "";
 let trialIndex = 0;
 let trialData = [];
@@ -52,6 +50,7 @@ const fixationEl = document.getElementById("fixation");
 const stimulusArea = document.getElementById("stimulus-area");
 const responseArea = document.getElementById("response-area");
 const promptText = document.getElementById("prompt-text");
+const responseOptionsText = document.getElementById("response-options");
 const responseStatus = document.getElementById("response-status");
 
 const completionSummary = document.getElementById("completion-summary");
@@ -185,8 +184,13 @@ function renderStimulusPlaceholder(message) {
 }
 
 function showResponsePrompt(trial) {
+  const responseOptions = getResponseOptions(trial);
+
   responseArea.classList.remove("hidden");
   promptText.textContent = trial.prompt || "What happens next?";
+  responseOptionsText.innerHTML = Object.entries(responseOptions)
+    .map(([key, label]) => `<span><strong>${key.toUpperCase()}</strong> = ${label}</span>`)
+    .join("");
 
   responseStartTime = performance.now();
   awaitingResponse = true;
@@ -196,13 +200,14 @@ function onResponseKey(event) {
   if (!awaitingResponse) return;
 
   const key = event.key.toLowerCase();
-  if (!(key in keyToLabel)) return;
+  const trial = TRIALS[trialIndex];
+  const responseOptions = getResponseOptions(trial);
+  if (!(key in responseOptions)) return;
 
   awaitingResponse = false;
 
-  const trial = TRIALS[trialIndex];
   const rt = Math.round(performance.now() - responseStartTime);
-  const responseLabel = keyToLabel[key];
+  const responseLabel = responseOptions[key];
 
   const record = {
     participant_id: participantId,
@@ -258,7 +263,7 @@ function downloadCsv() {
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  const safeId = participantId.replace(/[^a-z0-9_-]/gi, "_");
+  const safeId = participantId.replace(/[^a-z0-9_-]/gi, "_").replace(/^-+/, "_");
   a.href = url;
   a.download = `basketball_anticipation_${safeId || "participant"}.csv`;
   document.body.appendChild(a);
@@ -272,4 +277,24 @@ function escapeCsv(value) {
     return `"${value.replace(/\"/g, "\"\"")}"`;
   }
   return value;
+}
+
+function getResponseOptions(trial) {
+  const fallback = { A: "pass", S: "shoot", D: "drive" };
+  const source = trial.response_options && typeof trial.response_options === "object"
+    ? trial.response_options
+    : fallback;
+
+  const normalized = {};
+  for (const [key, label] of Object.entries(source)) {
+    if (typeof key === "string" && typeof label === "string") {
+      normalized[key.toLowerCase()] = label;
+    }
+  }
+
+  if (Object.keys(normalized).length === 0) {
+    return { a: "pass", s: "shoot", d: "drive" };
+  }
+
+  return normalized;
 }
