@@ -3,23 +3,23 @@
 const TRIALS = [
   {
     trial_id: "t01_image_dummy",
-    stimulus: "stimuli/example_scene_1.jpg",
+    stimulus: "stimuli/sample_01.svg",
     stimulus_type: "image",
     prompt: "What happens next?",
     response_options: { A: "pass", S: "shoot", D: "drive" },
     correct_answer: "pass"
   },
   {
-    trial_id: "t02_video_dummy",
-    stimulus: "stimuli/example_scene_2.mp4",
-    stimulus_type: "video",
+    trial_id: "t02_image_dummy",
+    stimulus: "stimuli/sample_02.svg",
+    stimulus_type: "image",
     prompt: "What happens next?",
     response_options: { A: "pass", S: "shoot", D: "drive" },
     correct_answer: "shoot"
   },
   {
     trial_id: "t03_image_dummy",
-    stimulus: "stimuli/example_scene_3.png",
+    stimulus: "stimuli/sample_03.svg",
     stimulus_type: "image",
     prompt: "What happens next?",
     response_options: { A: "pass", S: "shoot", D: "drive" },

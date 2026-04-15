@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Scene 3: Wing attack and drive lane</title>
+  <desc id="desc">Wing ball handler with highlighted drive lane to basket and rotating defender.</desc>
+  <rect width="800" height="450" fill="#d9a96c"/>
+  <rect x="30" y="30" width="740" height="390" rx="18" fill="none" stroke="#ffffff" stroke-width="6"/>
+  <path d="M610 120h140v210H610z" fill="#e8c99a" stroke="#ffffff" stroke-width="4"/>
+  <line x1="610" y1="225" x2="750" y2="225" stroke="#ffffff" stroke-width="4"/>
+
+  <circle cx="230" cy="180" r="24" fill="#4527a0"/>
+  <text x="230" y="186" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff">WING</text>
+  <circle cx="350" cy="240" r="24" fill="#ad1457"/>
+  <text x="350" y="246" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff">DEF</text>
+  <circle cx="270" cy="170" r="8" fill="#ef6c00" stroke="#4e342e" stroke-width="2"/>
+  <path d="M263 170h14M270 163v14" stroke="#4e342e" stroke-width="1.5"/>
+
+  <path d="M240 190 C 360 320, 500 290, 680 235" fill="none" stroke="#66ff66" stroke-width="8" stroke-dasharray="14 10"/>
+  <polygon points="680,235 664,242 666,226" fill="#66ff66"/>
+
+  <rect x="18" y="10" width="370" height="44" rx="8" fill="#1e1e1ecc"/>
+  <text x="32" y="39" font-family="Arial" font-size="20" fill="#ffffff">Scene 3: Wing drive lane attack</text>
+</svg>
